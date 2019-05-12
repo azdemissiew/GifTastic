@@ -15,8 +15,8 @@ for (var i = 0; i < topics.length; i++) {
 }
 
 // button function
-$(document).ready(function() {
-$("button").on("click", function () {
+
+$(document).on("click", "button", function () {
     $("#images").empty();
     var x = $(this).data("search");
     console.log(x);
@@ -45,14 +45,16 @@ $("button").on("click", function () {
     
 })
 
-});
+
 
 $("#addShow").on("click", function(event) {
     event.preventDefault();
     var newShow = $("#name").val().trim();
     console.log(newShow);
-    
-  
+    var form1 = "#" + newShow;
+    console.log(form1);
+    $("#page").append("<button id= '" + newShow + "'>" + newShow+ "</button>");
+    $(form1).data("search", newShow);
     
 
 });
